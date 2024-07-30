@@ -12,7 +12,7 @@ namespace UdemyCarbook.Persistance.Context
     {
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer("Server=MUSTAFACK1365;initial Catalog=UdemyCarBookDb;integrated Security=true ; ");
+            optionsBuilder.UseSqlServer("Server=MUSTAFACK1365;initial Catalog=UdemyCarBookDb;integrated Security=true ;TrustServerCertificate=True; ");
 
 
         }
