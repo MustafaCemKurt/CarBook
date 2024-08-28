@@ -1,5 +1,6 @@
 using UdemyCarbook.Application.Features.CQRS.Handlers.AboutHandlers;
 using UdemyCarbook.Application.Features.CQRS.Handlers.BannerHandlers;
+using UdemyCarbook.Application.Features.CQRS.Handlers.BrandHandlers;
 using UdemyCarbook.Application.Interfaces;
 using UdemyCarbook.Persistance.Context;
 using UdemyCarbook.Persistance.Repositories;
@@ -22,6 +23,12 @@ builder.Services.AddScoped<GetBannerByIdQueryHandler >();
 builder.Services.AddScoped<CreateBannerCommandHandler >();
 builder.Services.AddScoped<RemoveBannerCommandHandler >();
 builder.Services.AddScoped<UpdateBannerCommandHandler>();
+
+builder.Services.AddScoped<GetBrandQueryHandler>();
+builder.Services.AddScoped<GetBrandByIdQueryHandler>();
+builder.Services.AddScoped<CreateBrandCommandHandler>();
+builder.Services.AddScoped<UpdateBrandCommandHandler>();
+builder.Services.AddScoped<RemoveBrandCommandHandler>();
 
 
 
