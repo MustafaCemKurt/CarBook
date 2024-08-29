@@ -2,6 +2,7 @@ using UdemyCarbook.Application.Features.CQRS.Handlers.AboutHandlers;
 using UdemyCarbook.Application.Features.CQRS.Handlers.BannerHandlers;
 using UdemyCarbook.Application.Features.CQRS.Handlers.BrandHandlers;
 using UdemyCarbook.Application.Features.CQRS.Handlers.CarHandlers;
+using UdemyCarbook.Application.Features.CQRS.Handlers.CategoryHandlers;
 using UdemyCarbook.Application.Interfaces;
 using UdemyCarbook.Application.Interfaces.CarInterfaces;
 using UdemyCarbook.Persistance.Context;
@@ -45,7 +46,11 @@ internal class Program
         builder.Services.AddScoped<RemoveCarCommandHandler>();
         builder.Services.AddScoped<GetCarWithBrandQueryHandler>();
 
-
+        builder.Services.AddScoped<GetCategoryQueryHandler>();
+        builder.Services.AddScoped<GetCategoryByIdQueryHandler>();
+        builder.Services.AddScoped<CreateCategoryCommandHandler>();
+        builder.Services.AddScoped<UpdateCategoryCommandHandler>();
+        builder.Services.AddScoped<RemoveCategoryCommandHandler>();
 
 
         builder.Services.AddControllers();
