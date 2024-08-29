@@ -3,8 +3,10 @@ using UdemyCarbook.Application.Features.CQRS.Handlers.BannerHandlers;
 using UdemyCarbook.Application.Features.CQRS.Handlers.BrandHandlers;
 using UdemyCarbook.Application.Features.CQRS.Handlers.CarHandlers;
 using UdemyCarbook.Application.Interfaces;
+using UdemyCarbook.Application.Interfaces.CarInterfaces;
 using UdemyCarbook.Persistance.Context;
 using UdemyCarbook.Persistance.Repositories;
+using UdemyCarbook.Persistance.Repositories.CarRepositories;
 
 internal class Program
 {
@@ -15,6 +17,7 @@ internal class Program
         // Add services to the container.
         builder.Services.AddScoped<CarBookContext>();
         builder.Services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
+        builder.Services.AddScoped(typeof(ICarRepository), typeof(CarRepository));
 
         builder.Services.AddScoped<GetAboutQueryHandler>();
         builder.Services.AddScoped<GetAboutByIdQueryHandler>();
@@ -40,6 +43,7 @@ internal class Program
         builder.Services.AddScoped<CreateCarCommandHandler>();
         builder.Services.AddScoped<UpdateCarCommandHandler>();
         builder.Services.AddScoped<RemoveCarCommandHandler>();
+        builder.Services.AddScoped<GetCarWithBrandQueryHandler>();
 
 
 
