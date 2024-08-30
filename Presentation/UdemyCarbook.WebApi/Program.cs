@@ -6,6 +6,7 @@ using UdemyCarbook.Application.Features.CQRS.Handlers.CategoryHandlers;
 using UdemyCarbook.Application.Features.CQRS.Handlers.ContactHandlers;
 using UdemyCarbook.Application.Interfaces;
 using UdemyCarbook.Application.Interfaces.CarInterfaces;
+using UdemyCarbook.Application.Services;
 using UdemyCarbook.Persistance.Context;
 using UdemyCarbook.Persistance.Repositories;
 using UdemyCarbook.Persistance.Repositories.CarRepositories;
@@ -58,6 +59,8 @@ internal class Program
         builder.Services.AddScoped<CreateContactCommandHandler>();
         builder.Services.AddScoped<UpdateContactCommandHandler>();
         builder.Services.AddScoped<RemoveContactCommandHandler>();
+
+        builder.Services.AddApplicationService(builder.Configuration);
 
 
         builder.Services.AddControllers();
